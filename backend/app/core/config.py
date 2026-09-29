@@ -18,6 +18,13 @@ class Settings(BaseSettings):
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
+    
+    # Scheduler optimization settings
+    MINIMIZE_CLASS_GAPS: bool = True
+    BALANCE_SUBJECTS: bool = True
+    BALANCE_TEACHER_WORKLOAD: bool = True
+    MAX_SOLVER_TIME_SECONDS: int = 30
+
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8", case_sensitive=True)
     
     def __init__(self, **kwargs):
